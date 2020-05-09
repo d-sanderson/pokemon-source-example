@@ -12,6 +12,7 @@ export default () => {
           sp_atk
           defense
           attack
+          type
           speed
           sprites {
             normal
