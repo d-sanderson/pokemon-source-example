@@ -1,11 +1,27 @@
-import React from 'react'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-const index = () => {
-    return (
-        <div>
-            hello
-        </div>
-    )
+export default () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPokemons {
+        nodes {
+          name
+          hp
+          sp_def
+          sp_atk
+          defense
+          attack
+          speed
+          sprites {
+            normal
+            large
+            animated
+          }
+        }
+      }
+    }
+  `)
+  return <pre>{JSON.stringify(data, null, 4)}</pre>
 }
 
-export default index
