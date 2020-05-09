@@ -1,5 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +22,6 @@ export default () => {
         }
       }
     }
-  `)
-  return <pre>{JSON.stringify(data, null, 4)}</pre>
-}
-
+  `);
+  return <pre>{JSON.stringify(data, null, 4)}</pre>;
+};
