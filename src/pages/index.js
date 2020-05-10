@@ -7,6 +7,7 @@ export default () => {
       allPokemons {
         nodes {
           name
+          national_number
           hp
           sp_def
           sp_atk

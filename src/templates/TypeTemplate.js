@@ -14,6 +14,7 @@ export const typeQuery = graphql`
     allPokemons(filter: { type: { eq: $type } }) {
       nodes {
         name
+        national_number
         hp
         sp_def
         sp_atk
