@@ -1,8 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-
+import { getColorByType } from "../lib/common.js"
 const TypeTemplate = ({ data, pageContext }) => {
-  return <pre>{JSON.stringify(data, null, 4)}</pre>;
+  let color = getColorByType(pageContext.type)
+  console.log(color)
+  return <pre style={{backgroundColor: color}}>{JSON.stringify(data, null, 4)}</pre>;
 };
 
 export default TypeTemplate;
