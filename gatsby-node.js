@@ -1,5 +1,5 @@
 const path = require(`path`);
-const pokemons = require("pokemons");
+const { results } = require("pokemons");
 const types = [
   "Normal",
   "Fighting",
@@ -20,6 +20,10 @@ const types = [
   "Dark",
   "Fairy",
 ];
+const uniquePokemons = Array.from(new Set(results.map(a => a.name)))
+ .map(name => {
+   return results.find(a => a.name === name)
+ })
 exports.sourceNodes = async ({
   actions,
   createNodeId,
@@ -29,7 +33,7 @@ exports.sourceNodes = async ({
   const TypeTemplate = path.resolve(`src/templates/TypeTemplate.js`);
   try {
     // Map over the results array, calling action.createNode on each item in the array
-    pokemons.results.forEach((pokemon, i) => {
+   uniquePokemons.forEach((pokemon, i) => {
       const node = {
         ...pokemon, // We copy all of the properties from the pokemon object
         id: createNodeId(`${i}`), // Needs to be unique
@@ -46,8 +50,9 @@ exports.sourceNodes = async ({
   }
 
   types.forEach(type => {
+    let slug = type.toLowerCase();
     createPage({
-      path: `/type/${type}`,
+      path: `/type/${slug}`,
       component: TypeTemplate,
       context: {
         type: type,
