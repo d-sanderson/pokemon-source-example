@@ -5819,6 +5819,13 @@ gatsby-source-filesystem@^2.3.1:
     valid-url "^1.0.9"
     xstate "^4.9.1"
 
+gatsby-source-pokemons@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-pokemons/-/gatsby-source-pokemons-1.0.2.tgz#dca3d14c47b947eac32ac272e7824f06e0b8b79b"
+  integrity sha512-Z8rh85NmOp8G1XlzSf9hkYP+c9oTL/JJ0Ust6giWL5ZDf8X8I/VcEMjTHfXrpOxxHTHc+DJsAqNStv64LMeOVg==
+  dependencies:
+    pokemons "^1.1.0"
+
 gatsby-telemetry@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.3.3.tgz#3a7e3cd6a33b7701d032c3d94091e3cfd0f1a386"
