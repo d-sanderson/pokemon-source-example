@@ -5,7 +5,7 @@ import PokemonCardGrid from "../components/PokemonCardGrid";
 const TypeTemplate = ({ data, pageContext }) => {
   const pokemons = data.allPokemons.nodes;
   let color = getColorByType(pageContext.type)
-  return <PokemonCardGrid pokemons={pokemons}/>;
+  return <PokemonCardGrid color={color} pokemons={pokemons}/>;
 };
 
 export default TypeTemplate;

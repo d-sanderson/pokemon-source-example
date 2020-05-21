@@ -9,7 +9,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/core";
 import { useStaticQuery, graphql } from "gatsby";
-
+import { getColorByType, LightenDarkenColor } from "../lib/common"
+import Nav from "../components/Nav"
 const Layout = ({ children, pageContext }) => {
   console.log(pageContext)
   const data = useStaticQuery(graphql`
@@ -25,9 +26,10 @@ const Layout = ({ children, pageContext }) => {
   return (
     <div
       css={css`
-        background-color: #8c7851;
+        background-color:  ${pageContext ? LightenDarkenColor(getColorByType(pageContext.type), -50) : "#8c7851"};
       `}
     >
+      <Nav/>
       {children}
     </div>
   );

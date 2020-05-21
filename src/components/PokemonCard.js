@@ -5,7 +5,6 @@ import tw from "twin.macro";
 import { getColorByType, LightenDarkenColor } from "../lib/common.js";
 
 const PokemonCard = ({ pokemon }) => {
-    console.log(pokemon)
   const {
     name,
     national_number,
