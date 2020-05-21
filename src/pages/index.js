@@ -1,6 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-
+import PokemonCardGrid from "../components/PokemonCardGrid";
 export default () => {
   const data = useStaticQuery(graphql`
     {
@@ -24,5 +24,8 @@ export default () => {
       }
     }
   `);
-  return <pre>{JSON.stringify(data, null, 4)}</pre>;
+  const pokemons = data.allPokemons.nodes;
+  return (
+      <PokemonCardGrid pokemons={pokemons}/>
+  );
 };

@@ -7,7 +7,9 @@ module.exports = {
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-source-pokemons`
+    `gatsby-source-pokemons`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-layout`
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

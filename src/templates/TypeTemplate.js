@@ -1,10 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { getColorByType } from "../lib/common.js"
+import PokemonCardGrid from "../components/PokemonCardGrid";
 const TypeTemplate = ({ data, pageContext }) => {
+  const pokemons = data.allPokemons.nodes;
   let color = getColorByType(pageContext.type)
-  console.log(color)
-  return <pre style={{backgroundColor: color}}>{JSON.stringify(data, null, 4)}</pre>;
+  return <PokemonCardGrid pokemons={pokemons}/>;
 };
 
 export default TypeTemplate;
