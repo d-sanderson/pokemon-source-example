@@ -29,7 +29,7 @@ const Layout = ({ children, pageContext }) => {
         background-color:  ${pageContext?.length ? LightenDarkenColor(getColorByType(pageContext.type), -50) : "#8c7851"};
       `}
     >
-      {/* <Nav/> */}
+      <Nav/>
       {children}
     </div>
   );

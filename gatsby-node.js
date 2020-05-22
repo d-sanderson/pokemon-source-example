@@ -1,24 +1,5 @@
 const path = require(`path`);
-const types = [
-  "Normal",
-  "Fighting",
-  "Flying",
-  "Poison",
-  "Ground",
-  "Rock",
-  "Bug",
-  "Ghost",
-  "Steel",
-  "Fire",
-  "Grass",
-  "Water",
-  "Electric",
-  "Psychic",
-  "Ice",
-  "Dragon",
-  "Dark",
-  "Fairy",
-];
+const types = require("./src/lib/types");
 
 const gens = [
   { limit: 151, skip: 0 },

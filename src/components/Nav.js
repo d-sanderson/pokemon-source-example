@@ -1,43 +1,45 @@
 import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import types from "../lib/types";
+import tw from "twin.macro";
+import { getColorByType, LightenDarkenColor } from "../lib/common.js";
+const NavContainer = styled.nav`
+  ${tw`py-2 px-4 fixed z-10 h-full`}
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+`;
 
-import { css } from "@emotion/core";
-
-
+const TypeOption = styled.span`
+  ${tw`flex justify-between rounded-full px-3 py-1 my-2 hover:bg-gray-300 text-sm font-semibold text-gray-700 mr-2`};
+  width: 100%;
+  background-color: ${props => (props.color ? props.color : "#fff")};
+  `;
 const Nav = () => {
-  const [covidBannerIsOpen, setCovidBannerIsOpen] = useState(true);
-
+  const [navIsOpen, setNavIsOpen] = useState(true);
+  const typeOptions = types.map(type => (
+    <Link to={`/type/${type.toLowerCase()}`}>
+      <TypeOption color={getColorByType(type)}>{type}</TypeOption>
+    </Link>
+  ));
   return (
-    <div
-      className={`py-2 px-4 lg:py-8 lg:px-32 w-full fixed z-10`}
-      css={css`
-        bottom: 0;
-        background-color: #fd6550;
-      `}
-    >
-      <div
-        className="flex items-center justify-between w-48 py-2 px-4 absolute"
-        css={css`
-          top: 0;
-          right: 10%;
-          transform: translateY(-100%);
-          background-color: #fd6550;
-          border-radius: 12px 12px 0px 0px;
-        `}
-      >
-          Hello
-      </div>
-      <p
-        className="py-4 mx-4"
-        css={css`
-          color: rgba(0, 0, 0, 0.87);
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 19px;
-        `}
-      >
-Content
-      </p>
-    </div>
+    <NavContainer>
+      <section>
+        <div>GENERATION:</div>
+        <Link to="/gen/1"><TypeOption>I</TypeOption></Link>
+        <Link to="/gen/2"><TypeOption>II</TypeOption></Link>
+        <Link to="/gen/3"><TypeOption>III</TypeOption></Link>
+        <Link to="/gen/4"><TypeOption>IV</TypeOption></Link>
+        <Link to="/gen/5"><TypeOption>V</TypeOption></Link>
+        <Link to="/gen/6"><TypeOption>VI</TypeOption></Link>
+        <Link to="/gen/7"><TypeOption>VI</TypeOption></Link>
+      </section>
+      <section>
+        <div>TYPE:</div>
+        {typeOptions}
+      </section>
+    </NavContainer>
   );
 };
 
