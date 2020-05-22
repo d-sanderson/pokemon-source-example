@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import types from "../lib/types";
 import tw from "twin.macro";
+import classnames from "classnames";
 import { getColorByType, LightenDarkenColor } from "../lib/common.js";
 const NavContainer = styled.nav`
   ${tw`py-2 px-4 fixed z-10 h-full`}
@@ -12,20 +13,25 @@ const NavContainer = styled.nav`
 `;
 
 const TypeOption = styled.span`
-  ${tw`flex justify-between rounded-full px-3 py-1 my-2 hover:bg-gray-300 text-sm font-semibold text-gray-700 mr-2`};
+  ${tw`flex justify-between shadow-lg rounded-full px-3 py-1 my-2 hover:bg-gray-300 text-sm font-semibold text-gray-700 mr-2`};
   width: 100%;
   background-color: ${props => (props.color ? props.color : "#fff")};
   `;
 const Nav = () => {
   const [navIsOpen, setNavIsOpen] = useState(true);
+  const toggleNav = () => setNavIsOpen(!navIsOpen);
+  const navClass = classnames({
+    block: navIsOpen,
+    hidden: !navIsOpen
+  })
   const typeOptions = types.map(type => (
     <Link to={`/type/${type.toLowerCase()}`}>
       <TypeOption color={getColorByType(type)}>{type}</TypeOption>
     </Link>
   ));
   return (
-    <NavContainer>
-      <section>
+    <NavContainer className={navClass}>
+      <section handleClick={toggleNav}>
         <div>GENERATION:</div>
         <Link to="/gen/1"><TypeOption>I</TypeOption></Link>
         <Link to="/gen/2"><TypeOption>II</TypeOption></Link>

@@ -37,7 +37,7 @@ const PokemonCard = ({ pokemon }) => {
     background-color: ${props => props.color};
   `;
   const Stat = styled.div`
-    ${tw`flex justify-between rounded-full px-3 py-1 my-2 text-sm font-semibold text-gray-700 mr-2`};
+    ${tw`flex justify-between shadow-lg rounded-full px-3 py-1 my-2 text-sm font-semibold text-gray-700 mr-2`};
     width: 100%;
     background-color: ${props => props.color};
     
