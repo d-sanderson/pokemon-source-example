@@ -26,10 +26,10 @@ const Layout = ({ children, pageContext }) => {
   return (
     <div
       css={css`
-        background-color:  ${pageContext ? LightenDarkenColor(getColorByType(pageContext.type), -50) : "#8c7851"};
+        background-color:  ${pageContext?.length ? LightenDarkenColor(getColorByType(pageContext.type), -50) : "#8c7851"};
       `}
     >
-      <Nav/>
+      {/* <Nav/> */}
       {children}
     </div>
   );

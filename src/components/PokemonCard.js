@@ -22,6 +22,7 @@ const PokemonCard = ({ pokemon }) => {
     ${tw`max-w-xs rounded overflow-hidden shadow-lg my-2`};
     background-color: #ffcb05;
     border: 10px solid #ffcb05;
+    border-radius: 10px;
   `;
 
   const TopCard = styled.div`
@@ -32,11 +33,14 @@ const PokemonCard = ({ pokemon }) => {
   `;
   const CardBody = styled.div`
     ${tw`px-6 py-4`};
+    border-radius: 10px;
     background-color: ${props => props.color};
   `;
   const Stat = styled.div`
-    ${tw`flex justify-between bg-gray-300 rounded-full px-3 py-1 my-2 text-sm font-semibold text-gray-700 mr-2`};
+    ${tw`flex justify-between rounded-full px-3 py-1 my-2 text-sm font-semibold text-gray-700 mr-2`};
     width: 100%;
+    background-color: ${props => props.color};
+    
   `;
   const Type = styled.span`
     ${tw`inline-block bg-gray-300 rounded-full px-3 py-1 my-4 text-sm font-semibold text-gray-700 mr-2`};
@@ -47,6 +51,7 @@ const PokemonCard = ({ pokemon }) => {
   const BottomCard = styled.div`
     height: 200px;
     padding: 10px 0 10px 2px;
+   
   `;
   const types = type.map(t => (
     <Type color={LightenDarkenColor(getColorByType(t), 40)}>{t}</Type>
@@ -68,20 +73,20 @@ const PokemonCard = ({ pokemon }) => {
           alt={name}
         />
         {types}
-        <BottomCard>
-          <Stat>
+        <BottomCard color={lighterColor}>
+          <Stat color={lighterColor}>
             <span>ATK:</span>
             <span>{attack}</span>
           </Stat>
-          <Stat>
+          <Stat color={lighterColor}>
             <span>DEF:</span>
             <span>{defense}</span>
           </Stat>
-          <Stat>
+          <Stat color={lighterColor}>
             <span>SP ATK:</span>
             <span>{sp_atk}</span>
           </Stat>
-          <Stat>
+          <Stat color={lighterColor}>
             <span>SP DEF:</span>
             <span>{sp_def}</span>
           </Stat>
