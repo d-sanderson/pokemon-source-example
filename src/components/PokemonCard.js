@@ -65,9 +65,6 @@ const PokemonCard = ({ pokemon }) => {
           <Title>{name}</Title> <span>HP: {hp}</span>
         </TopCard>
         <img
-          onError={e => {
-            e.target.src = "https://wiki.p-insurgence.com/images/0/09/722.png";
-          }}
           css={css`
             ${tw`bg-indigo-300 m-auto text-white p-2 rounded`};
             background-color: ${lighterColor};

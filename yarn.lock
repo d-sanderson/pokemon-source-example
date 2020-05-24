@@ -6076,10 +6076,10 @@ gatsby-source-filesystem@^2.3.1:
     valid-url "^1.0.9"
     xstate "^4.9.1"
 
-gatsby-source-pokemons@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-pokemons/-/gatsby-source-pokemons-1.0.2.tgz#dca3d14c47b947eac32ac272e7824f06e0b8b79b"
-  integrity sha512-Z8rh85NmOp8G1XlzSf9hkYP+c9oTL/JJ0Ust6giWL5ZDf8X8I/VcEMjTHfXrpOxxHTHc+DJsAqNStv64LMeOVg==
+gatsby-source-pokemons@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-pokemons/-/gatsby-source-pokemons-1.1.0.tgz#e81c9a348976d845fabad3433620e67f6bb5c58f"
+  integrity sha512-MR31v4SE5GGdPasbwAHtrhkYT421sSdxg3u8h9a67r4qen4Zmq7hrLQ9zxUX3vpcCyyEQnjoRQGq/rX5RXOT1Q==
   dependencies:
     pokemons "^1.1.0"
 
