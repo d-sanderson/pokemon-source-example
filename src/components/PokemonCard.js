@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
-import { getColorByType, LightenDarkenColor } from "../lib/common.js";
+import { getColorByType, LightenDarkenColor, titleCase } from "../lib/common.js";
 
 const PokemonCard = ({ pokemon }) => {
   const {
@@ -18,14 +18,13 @@ const PokemonCard = ({ pokemon }) => {
   } = pokemon;
 
   const { normal, large, animate } = sprites;
-  const color = getColorByType(type[0]);
+  const color = getColorByType(titleCase(type[0]));
   const Card = styled.div`
     ${tw`max-w-xs rounded overflow-hidden shadow-lg my-2`};
     background-color: #ffcb05;
     border: 10px solid #ffcb05;
     border-radius: 10px;
   `;
-
   const TopCard = styled.div`
     ${tw`flex justify-between`};
   `;
@@ -53,22 +52,23 @@ const PokemonCard = ({ pokemon }) => {
     padding: 10px 0 10px 2px;
   `;
   const types = type.map((t, i) => (
-    <Type key={i} color={LightenDarkenColor(getColorByType(t), 40)}>
+    <Type key={i} color={LightenDarkenColor(getColorByType(titleCase(t)), 40)}>
       {t}
     </Type>
   ));
-  const lighterColor = LightenDarkenColor(getColorByType(type[0]), 30);
+  const lighterColor = LightenDarkenColor(getColorByType(titleCase(type[0])), 30);
   return (
     <Card>
       <CardBody color={color}>
         <TopCard>
-          <Title>{name}</Title> <span>HP: {hp}</span>
+          <Title>{name}</Title> <span>HP: {national_number}</span>
         </TopCard>
         <img
           css={css`
             ${tw`bg-indigo-300 m-auto text-white p-2 rounded`};
             background-color: ${lighterColor};
-            width: 100%;
+            width: 235px;
+            height: 255px;
           `}
           src={normal}
           alt={name}

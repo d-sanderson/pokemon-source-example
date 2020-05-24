@@ -8,6 +8,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-source-pokemons`,
+    // {
+    //   // including a plugin from outside the plugins folder needs the path to it
+    //   resolve: require.resolve(`../gatsby-source-pokemons`),
+    // },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-layout`
     // {

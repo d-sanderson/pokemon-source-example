@@ -1,6 +1,6 @@
 const path = require(`path`);
 const types = require("./src/lib/types");
-
+const titleCase = require("./src/lib/common").titleCase;
 const gens = [
   { limit: 151, skip: 0 },
   { limit: 100, skip: 151 },
@@ -9,6 +9,7 @@ const gens = [
   { limit: 156, skip: 493 },
   { limit: 72, skip: 649 },
   { limit: 88, skip: 721 },
+  { limit: 90, skip: 810 },
 ];
 
 
@@ -22,8 +23,8 @@ exports.sourceNodes = ({ graphql, actions }) => {
       path: `/type/${slug}`,
       component: TypeTemplate,
       context: {
-        type: type,
-        url: `/type/${type}`,
+        type: slug,
+        url: `/type/${slug}`,
       },
     });
   });

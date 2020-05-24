@@ -25,8 +25,6 @@ export const genQuery = graphql`
         speed
         sprites {
           normal
-          large
-          animated
         }
       }
     }

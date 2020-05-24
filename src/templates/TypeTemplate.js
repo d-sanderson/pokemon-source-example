@@ -25,10 +25,9 @@ export const typeQuery = graphql`
         speed
         sprites {
           normal
-          large
-          animated
         }
       }
     }
   }
 `;
+

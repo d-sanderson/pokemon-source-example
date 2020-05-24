@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import { getColorByType, LightenDarkenColor } from "../lib/common"
 import Nav from "../components/Nav"
 const Layout = ({ children, pageContext }) => {
-  console.log(pageContext)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
