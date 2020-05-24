@@ -12,7 +12,7 @@ grid-gap: 1rem;
 }
 `;
 
-const PokemonCardGrid = ({ pokemons }) => {
+const PokemonCardGrid = ({ pokemons, color }) => {
   const monz = pokemons.map((pokemon, i) => <PokemonCard key={i} pokemon={pokemon}/>);
   return <Container>{monz}</Container>;
 };
