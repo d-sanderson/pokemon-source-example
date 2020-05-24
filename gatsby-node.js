@@ -2,15 +2,16 @@ const path = require(`path`);
 const types = require("./src/lib/types");
 const titleCase = require("./src/lib/common").titleCase;
 const gens = [
-  { limit: 151, skip: 0 },
-  { limit: 100, skip: 151 },
-  { limit: 135, skip: 251 },
-  { limit: 107, skip: 386 },
-  { limit: 156, skip: 493 },
-  { limit: 72, skip: 649 },
-  { limit: 88, skip: 721 },
-  { limit: 90, skip: 810 },
+  { gte: 1, lte: 151 },
+  { gte: 152, lte: 252 },
+  { gte: 253, lte: 386 },
+  { gte: 387, lte: 493 },
+  { gte: 494, lte: 649 },
+  { gte: 650, lte: 721 },
+  { gte: 722, lte: 810 },
+  { gte: 811, lte: 890 },
 ];
+
 
 
 exports.sourceNodes = ({ graphql, actions }) => {
@@ -33,8 +34,8 @@ exports.sourceNodes = ({ graphql, actions }) => {
       path: `/gen/${i + 1}`,
       component: GenerationTemplate,
       context: {
-        limit: gen.limit,
-        skip: gen.skip
+        lte: gen.lte,
+        gte: gen.gte
       },
     });
   });

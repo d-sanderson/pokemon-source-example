@@ -61,7 +61,7 @@ const PokemonCard = ({ pokemon }) => {
     <Card>
       <CardBody color={color}>
         <TopCard>
-          <Title>{name}</Title> <span>HP: {national_number}</span>
+          <Title>{name}</Title> <span>HP: {hp}</span>
         </TopCard>
         <img
           css={css`

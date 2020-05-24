@@ -11,7 +11,7 @@ const TypeTemplate = ({ data, pageContext }) => {
 export default TypeTemplate;
 
 export const typeQuery = graphql`
-  query QueryAllPokemons($type: String!) {
+  query QueryPokemonByType($type: String!) {
     allPokemons(filter: { type: { eq: $type } }) {
       nodes {
         name

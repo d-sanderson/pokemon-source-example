@@ -39,7 +39,8 @@ const Nav = () => {
         <Link to="/gen/4"><TypeOption>IV</TypeOption></Link>
         <Link to="/gen/5"><TypeOption>V</TypeOption></Link>
         <Link to="/gen/6"><TypeOption>VI</TypeOption></Link>
-        <Link to="/gen/7"><TypeOption>VI</TypeOption></Link>
+        <Link to="/gen/7"><TypeOption>VII</TypeOption></Link>
+        <Link to="/gen/8"><TypeOption>VIII</TypeOption></Link>
       </section>
       <section>
         <div>TYPE:</div>
