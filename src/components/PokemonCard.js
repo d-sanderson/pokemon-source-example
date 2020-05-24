@@ -16,6 +16,7 @@ const PokemonCard = ({ pokemon }) => {
     type,
     sprites,
   } = pokemon;
+
   const { normal, large, animate } = sprites;
   const color = getColorByType(type[0]);
   const Card = styled.div`
@@ -40,7 +41,6 @@ const PokemonCard = ({ pokemon }) => {
     ${tw`flex justify-between shadow-lg rounded-full px-3 py-1 my-2 text-sm font-semibold text-gray-700 mr-2`};
     width: 100%;
     background-color: ${props => props.color};
-    
   `;
   const Type = styled.span`
     ${tw`inline-block bg-gray-300 rounded-full px-3 py-1 my-4 text-sm font-semibold text-gray-700 mr-2`};
@@ -51,10 +51,11 @@ const PokemonCard = ({ pokemon }) => {
   const BottomCard = styled.div`
     height: 200px;
     padding: 10px 0 10px 2px;
-   
   `;
-  const types = type.map(t => (
-    <Type color={LightenDarkenColor(getColorByType(t), 40)}>{t}</Type>
+  const types = type.map((t, i) => (
+    <Type key={i} color={LightenDarkenColor(getColorByType(t), 40)}>
+      {t}
+    </Type>
   ));
   const lighterColor = LightenDarkenColor(getColorByType(type[0]), 30);
   return (
@@ -64,6 +65,9 @@ const PokemonCard = ({ pokemon }) => {
           <Title>{name}</Title> <span>HP: {hp}</span>
         </TopCard>
         <img
+          onError={e => {
+            e.target.src = "https://wiki.p-insurgence.com/images/0/09/722.png";
+          }}
           css={css`
             ${tw`bg-indigo-300 m-auto text-white p-2 rounded`};
             background-color: ${lighterColor};

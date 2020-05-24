@@ -24,14 +24,14 @@ const Nav = () => {
     block: navIsOpen,
     hidden: !navIsOpen
   })
-  const typeOptions = types.map(type => (
-    <Link to={`/type/${type.toLowerCase()}`}>
+  const typeOptions = types.map((type, i) => (
+    <Link key={i} to={`/type/${type.toLowerCase()}`}>
       <TypeOption color={getColorByType(type)}>{type}</TypeOption>
     </Link>
   ));
   return (
     <NavContainer className={navClass}>
-      <section handleClick={toggleNav}>
+      <section onClick={toggleNav}>
         <div>GENERATION:</div>
         <Link to="/gen/1"><TypeOption>I</TypeOption></Link>
         <Link to="/gen/2"><TypeOption>II</TypeOption></Link>
